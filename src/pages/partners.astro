@@ -1,0 +1,25 @@
+---
+import "../styles/tailwind.css";
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>加入合作 | 沃伦勒夫芯片手环</title>
+    <meta name="description" content="面向中医馆、理疗师、健康工作室与内容创作者的合作计划与权益说明。" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <main class="mx-auto max-w-3xl px-6 py-12">
+      <h1 class="text-2xl font-bold">加入合作</h1>
+      <p class="mt-2 text-slate-700">我们欢迎中医馆、理疗师、健康工作室以及内容创作者加入合作，提供标准物料包、培训与活动支持。</p>
+      <form name="partner" method="POST" data-netlify="true" class="mt-6 grid gap-3">
+        <input type="hidden" name="form-name" value="partner" />
+        <input class="border rounded-xl px-3 py-2" name="name" placeholder="姓名 / 机构" required />
+        <input class="border rounded-xl px-3 py-2" name="region" placeholder="地区（如：蒙特利尔）" required />
+        <input class="border rounded-xl px-3 py-2" name="contact" placeholder="微信 / 邮箱 / 电话" required />
+        <textarea class="border rounded-xl px-3 py-2" name="notes" placeholder="您的场景与需求"></textarea>
+        <button class="rounded-xl px-4 py-2 bg-emerald-500 text-white">提交合作意向</button>
+      </form>
+    </main>
+  </body>
+</html>

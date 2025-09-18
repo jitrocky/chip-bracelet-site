@@ -1,0 +1,13 @@
+---
+const { title = "沃伦勒夫芯片手环", subtitle = "用频率唤醒身体自愈力", ctaHref = "/science", ctaText = "了解原理" } = Astro.props;
+---
+<section class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+  <div class="mx-auto max-w-6xl px-6">
+    <h1 class="text-3xl md:text-5xl font-bold tracking-tight">{title}</h1>
+    <p class="mt-4 text-slate-300 md:text-lg">{subtitle}</p>
+    <div class="mt-6 flex gap-3">
+      <a href={ctaHref} class="rounded-2xl px-5 py-3 bg-white/10 hover:bg-white/20 transition">{ctaText}</a>
+      <a href="/cases" class="rounded-2xl px-5 py-3 bg-emerald-500 hover:bg-emerald-600 transition text-white">真实见证</a>
+    </div>
+  </div>
+</section>

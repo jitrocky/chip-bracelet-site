@@ -1,0 +1,43 @@
+---
+import "../styles/tailwind.css";
+import Hero from "../components/Hero.astro";
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>沃伦勒夫芯片手环 | 官方介绍</title>
+    <meta name="description" content="非侵入、最安全的全息芯片手环，用频率辅助日常健康调理。科研摘要、热成像对比、真实见证与合作入口。" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <Hero title="沃伦勒夫芯片手环" subtitle="非侵入・最安全・面向日常调理" />
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <section class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border">
+          <h3 class="font-semibold text-lg">为什么选择芯片手环</h3>
+          <p class="mt-2 text-sm text-slate-600">基于全息与频率的非侵入式可穿戴，适配日常佩戴与调理方案。</p>
+        </div>
+        <div class="p-6 rounded-2xl border">
+          <h3 class="font-semibold text-lg">真实见证</h3>
+          <p class="mt-2 text-sm text-slate-600">多位用户在睡眠、颈肩舒缓、专注与恢复等方面反馈积极体验。</p>
+        </div>
+        <div class="p-6 rounded-2xl border">
+          <h3 class="font-semibold text-lg">科研与报告</h3>
+          <p class="mt-2 text-sm text-slate-600">热成像测试与大学研究报告供参考。</p>
+        </div>
+      </section>
+
+      <section class="mt-12 flex flex-wrap gap-3">
+        <a class="px-4 py-2 rounded-xl border hover:bg-slate-50" href="/science">了解原理</a>
+        <a class="px-4 py-2 rounded-xl border hover:bg-slate-50" href="/cases">查看见证</a>
+        <a class="px-4 py-2 rounded-xl border hover:bg-slate-50" href="/pricing">定价与活动</a>
+        <a class="px-4 py-2 rounded-xl border hover:bg-slate-50" href="/partners">加入合作</a>
+        <a class="px-4 py-2 rounded-xl border hover:bg-slate-50" href="/faq">常见问题</a>
+      </section>
+
+      <section class="mt-16 text-xs text-slate-500">
+        <p>免责声明：本产品非医疗器械，不用于疾病诊断或治疗；体验因人而异，请理性参考并遵医嘱。</p>
+      </section>
+    </main>
+  </body>
+</html>

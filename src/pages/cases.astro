@@ -1,0 +1,28 @@
+---
+import "../styles/tailwind.css";
+
+const images = await Astro.glob('../content/cases/*.{jpg,png,jpeg}');
+// Sort by filename for deterministic order
+images.sort((a, b) => a.file.split('/').pop().localeCompare(b.file.split('/').pop(), 'zh-CN'));
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>见证与案例 | 沃伦勒夫芯片手环</title>
+    <meta name="description" content="来自真实用户的图文见证（非医疗用途、体验因人而异）。" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <h1 class="text-2xl font-bold">见证与案例</h1>
+      <p class="mt-2 text-slate-600 text-sm">所有图片用于体验分享，仅供参考；请勿将个别体验等同于疗效。</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+        {images.map((img) => (
+          <figure class="border rounded-xl overflow-hidden">
+            <img src={img.file.replace('../../public', '')} alt="case" class="w-full h-auto" loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </main>
+  </body>
+</html>
