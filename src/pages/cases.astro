@@ -1,7 +1,7 @@
 ---
 import "../styles/tailwind.css";
 
-const images = await Astro.glob('../content/cases/*.{jpg,png,jpeg}');
+const images = await Astro.glob('../../public/images/cases/*');
 // Sort by filename for deterministic order
 images.sort((a, b) => a.file.split('/').pop().localeCompare(b.file.split('/').pop(), 'zh-CN'));
 ---
