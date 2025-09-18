@@ -2,7 +2,7 @@
 import "../styles/tailwind.css";
 
 // 把下面这个 URL 换成你 Google Forms 的 iframe src（必须带 ?embedded=true）
-const GOOGLE_FORMS_EMBED_URL = "https://docs.google.com/forms/d/e/XXXXXXXXXXXXXXXXX/viewform?embedded=true";
+const GOOGLE_FORMS_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLScWWBaXkfvOhXC2xjdeR-qkEJLt5qLWCK2w0NBdvoPW875dzQ/viewform?usp=dialog?embedded=true";
 ---
 
 <html lang="zh-CN">
@@ -48,7 +48,7 @@ const GOOGLE_FORMS_EMBED_URL = "https://docs.google.com/forms/d/e/XXXXXXXXXXXXXX
 
       <p class="mt-4 text-xs text-slate-500">
         若表单无法加载，请
-        <a href={https://docs.google.com/forms/d/e/1FAIpQLScWWBaXkfvOhXC2xjdeR-qkEJLt5qLWCK2w0NBdvoPW875dzQ/viewform?usp=dialog.replace('?embedded=true','')} class="text-emerald-600 hover:underline" target="_blank" rel="noopener">
+        <a href={GOOGLE_FORMS_EMBED_URL.replace('?embedded=true','')} class="text-emerald-600 hover:underline" target="_blank" rel="noopener">
           点击此处在新窗口打开
         </a>。
       </p>
