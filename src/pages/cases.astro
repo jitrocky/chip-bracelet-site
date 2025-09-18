@@ -1,10 +1,21 @@
 ---
 import "../styles/tailwind.css";
 
-const images = await Astro.glob('../../public/images/cases/*');
-// Sort by filename for deterministic order
-images.sort((a, b) => a.file.split('/').pop().localeCompare(b.file.split('/').pop(), 'zh-CN'));
+// 直接用 public 里的图片路径（文件名要和 public/images/cases 下的一致）
+const images = [
+  "/images/cases/mmexport1757243583743.jpg",
+  "/images/cases/mmexport1757243572138.jpg",
+  "/images/cases/mmexport1757243577963.jpg",
+  "/images/cases/mmexport1757494688913.jpg",
+  "/images/cases/mmexport1757494685045.jpg",
+  "/images/cases/mmexport1757494676837.jpg",
+  "/images/cases/mmexport1757494672372.jpg",
+  "/images/cases/mmexport1757494681001.jpg",
+  "/images/cases/mmexport1757494693674.jpg",
+  "/images/cases/mmexport1757774491377.jpg",
+].filter(Boolean);
 ---
+
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
@@ -16,10 +27,11 @@ images.sort((a, b) => a.file.split('/').pop().localeCompare(b.file.split('/').po
     <main class="mx-auto max-w-6xl px-6 py-12">
       <h1 class="text-2xl font-bold">见证与案例</h1>
       <p class="mt-2 text-slate-600 text-sm">所有图片用于体验分享，仅供参考；请勿将个别体验等同于疗效。</p>
+
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-        {images.map((img) => (
+        {images.map((src) => (
           <figure class="border rounded-xl overflow-hidden">
-            <img src={img.file.replace('../../public', '')} alt="case" class="w-full h-auto" loading="lazy" />
+            <img src={src} alt="case" class="w-full h-auto" loading="lazy" />
           </figure>
         ))}
       </div>
