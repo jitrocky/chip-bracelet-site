@@ -1,25 +1,57 @@
 ---
 import "../styles/tailwind.css";
+
+// 把下面这个 URL 换成你 Google Forms 的 iframe src（必须带 ?embedded=true）
+const GOOGLE_FORMS_EMBED_URL = "https://docs.google.com/forms/d/e/XXXXXXXXXXXXXXXXX/viewform?embedded=true";
 ---
+
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>加入合作 | 沃伦勒夫芯片手环</title>
     <meta name="description" content="面向中医馆、理疗师、健康工作室与内容创作者的合作计划与权益说明。" />
+    <style>
+      /* 让 Google Forms 的 iframe 在移动端自适应 */
+      .form-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .form-iframe {
+        width: 100%;
+        height: 1100px; /* 如需更长表单可调大 */
+        border: 0;
+      }
+      @media (min-width: 768px) {
+        .form-iframe { height: 1000px; }
+      }
+    </style>
   </head>
   <body class="bg-white text-slate-800">
-    <main class="mx-auto max-w-3xl px-6 py-12">
+    <main class="mx-auto max-w-6xl px-6 py-12">
       <h1 class="text-2xl font-bold">加入合作</h1>
-      <p class="mt-2 text-slate-700">我们欢迎中医馆、理疗师、健康工作室以及内容创作者加入合作，提供标准物料包、培训与活动支持。</p>
-      <form name="partner" method="POST" data-netlify="true" class="mt-6 grid gap-3">
-        <input type="hidden" name="form-name" value="partner" />
-        <input class="border rounded-xl px-3 py-2" name="name" placeholder="姓名 / 机构" required />
-        <input class="border rounded-xl px-3 py-2" name="region" placeholder="地区（如：蒙特利尔）" required />
-        <input class="border rounded-xl px-3 py-2" name="contact" placeholder="微信 / 邮箱 / 电话" required />
-        <textarea class="border rounded-xl px-3 py-2" name="notes" placeholder="您的场景与需求"></textarea>
-        <button class="rounded-xl px-4 py-2 bg-emerald-500 text-white">提交合作意向</button>
-      </form>
+      <p class="mt-2 text-slate-700">
+        我们欢迎中医馆、理疗师、健康工作室以及内容创作者加入合作，提供标准物料包、培训与活动支持。
+        请填写下方表单，我们将尽快与您联系。
+      </p>
+
+      <div class="form-wrap mt-6">
+        <iframe
+          class="form-iframe rounded-xl border"
+          src={GOOGLE_FORMS_EMBED_URL}
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <p class="mt-4 text-xs text-slate-500">
+        若表单无法加载，请
+        <a href={https://docs.google.com/forms/d/e/1FAIpQLScWWBaXkfvOhXC2xjdeR-qkEJLt5qLWCK2w0NBdvoPW875dzQ/viewform?usp=dialog.replace('?embedded=true','')} class="text-emerald-600 hover:underline" target="_blank" rel="noopener">
+          点击此处在新窗口打开
+        </a>。
+      </p>
     </main>
   </body>
 </html>
